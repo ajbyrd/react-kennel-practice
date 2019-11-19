@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Employees.css'
+
 
 class EmployeeCard extends Component {
   render() {
@@ -6,9 +8,9 @@ class EmployeeCard extends Component {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={require('./Willie_Nelson.jpg')} alt="Employee 1" />
+            <img src={require(`${this.props.employee.image}`)} alt="Employee 1" />
           </picture>
-          <h3>Employee Name: <span className="card-employeename">Willie</span></h3>
+          <h3><span className="card-employeename">{this.props.employee.name}</span></h3>
           <p>Employee since 2013</p>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Owners.css'
+
 
 class OwnerCard extends Component {
   render() {
@@ -6,9 +8,9 @@ class OwnerCard extends Component {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={require('./Adam_Hank.JPG')} alt="Owner 1" />
+            <img src={require(`${this.props.owner.image}`)} alt="Owner 1" />
           </picture>
-          <h3>Owner Name: <span className="card-ownername">Adam</span></h3>
+          <h3><span className="card-ownername">{this.props.owner.name}</span></h3>
         </div>
       </div>
     );
