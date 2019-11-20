@@ -27,11 +27,23 @@ render(){
     return(
       <div className="container-cards">
         {this.state.owners.map(owner =>
-          <OwnerCard key={owner.id} owner={owner} />
+          <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner} />
         )}
       </div>
     )
   }
+
+  deleteOwner = id => {
+    OwnerManager.delete(id)
+    .then(() => {
+      OwnerManager.getAll()
+      .then((newOwners) => {
+        this.setState({
+            owners: newOwners
+        })
+      })
+    })
+  }  
 }
 
 export default OwnerList

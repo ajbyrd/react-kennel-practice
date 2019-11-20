@@ -6,11 +6,15 @@
     ],
 
     "employees" : [
-        {"id": 1, "name": "Willie", "image": "./Willie_Nelson.jpg"}
+        {"id": 1, "name": "Willie", "image": "./Willie_Nelson.jpg"},
+        {"id": 2, "name": "Waylon", "image": "./Willie_Nelson.jpg"},
+        {"id": 3, "name": "Merle", "image": "./Willie_Nelson.jpg"}
     ],
 
     "owners": [
-        {"id": 1, "name": "Adam", "image": "./Adam_Hank.JPG"}
+        {"id": 1, "name": "Adam", "image": "./Adam_Hank.JPG"},
+        {"id": 2, "name": "Brooks", "image": "./Adam_Hank.JPG"},
+        {"id": 3, "name": "Lisa", "image": "./Adam_Hank.JPG"}
     ],
     "locations": [
         {"id": 1, "name": "Green Hills Location", "address": "123 Hillsboro Pike", "phone": "615-555-1234"},
