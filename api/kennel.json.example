@@ -17,11 +17,6 @@
       "name": "Daisy",
       "breed": "Aussiedoodle",
       "image": "./Daisy_Wink.jpg"
-    },
-    {
-      "name": "Ellie",
-      "breed": "Lab",
-      "id": 4
     }
   ],
   "employees": [
