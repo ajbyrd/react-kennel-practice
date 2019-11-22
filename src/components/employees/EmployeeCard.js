@@ -8,11 +8,11 @@ class EmployeeCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <picture>
+          {/* <picture>
             <img src={require(`${this.props.employee.image}`)} alt="Employee 1" />
-          </picture>
+          </picture> */}
           <h3><span className="card-employeename">{this.props.employee.name}</span></h3>
-          <p>Employee since 2013</p>
+          <button type="button" onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/edit`)}}>Edit</button>
           <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Terminate</button>
           <Link to={`/employees/${this.props.employee.id}`}><button>Details</button></Link>
         </div>

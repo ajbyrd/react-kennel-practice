@@ -3,8 +3,7 @@
     {
       "id": 1,
       "name": "Hank",
-      "breed": "Boykin Spaniel",
-      "image": "./Guitar_Hank.JPG"
+      "breed": "Boykin Spaniel"
     },
     {
       "id": 2,
@@ -19,9 +18,9 @@
       "image": "./Daisy_Wink.jpg"
     },
     {
+      "id": 4,
       "name": "Ellie",
-      "breed": "Lab",
-      "id": 4
+      "breed": "Chocolate Lab"
     }
   ],
   "employees": [
@@ -32,8 +31,7 @@
     },
     {
       "id": 2,
-      "name": "Waylon",
-      "image": "./Willie_Nelson.jpg"
+      "name": "Waylon"
     },
     {
       "id": 3,
