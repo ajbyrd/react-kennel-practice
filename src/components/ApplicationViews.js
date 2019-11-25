@@ -12,7 +12,6 @@ import EmployeeList from './employees/EmployeeList'
 import LocationList from './locations/LocationList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './locations/LocationDetail'
-import OwnerDetail from './owners/OwnerDetail'
 import AnimalForm from './animal/AnimalForm'
 import LocationForm from './locations/LocationForm'
 import Login from './auth/Login'
@@ -103,10 +102,6 @@ class ApplicationViews extends Component {
                         return <Redirect to="/login" />
                     }
                 }} />
-                <Route exact path="/owners/:ownerId(\d+)" render={(props) => {
-                    return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />
-                }} />
-
                 <Route
                     path="/owners/:ownerId(\d+)/edit" render={props => {
                         return <OwnerEditForm {...props} />
