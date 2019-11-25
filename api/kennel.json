@@ -3,24 +3,28 @@
     {
       "id": 1,
       "name": "Hank",
-      "breed": "Boykin Spaniel"
+      "breed": "Boykin Spaniel",
+      "employeeId": 2
     },
     {
       "id": 2,
       "name": "Lilly",
       "breed": "Golden Retriever",
-      "image": "./Lilly_Smile.jpg"
+      "image": "./Lilly_Smile.jpg",
+      "employeeId": 1
     },
     {
       "id": 3,
       "name": "Daisy",
       "breed": "Aussiedoodle",
-      "image": "./Daisy_Wink.jpg"
+      "image": "./Daisy_Wink.jpg",
+      "employeeId": 3
     },
     {
       "id": 4,
       "name": "Ellie",
-      "breed": "Chocolate Lab"
+      "breed": "Chocolate Lab",
+      "employeeId": 2
     }
   ],
   "employees": [
@@ -54,9 +58,8 @@
     },
     {
       "id": 3,
-      "name": "Lisa",
-      "phone": "205-401-8376",
-      "image": "./Adam_Hank.JPG"
+      "name": "Craig and Lisa",
+      "phone": "205-401-8376"
     }
   ],
   "locations": [

@@ -37,7 +37,7 @@ class LocationList extends Component {
 
         <div className="container-cards">
           {this.state.locations.map(location =>
-            <LocationCard key={location.id} location={location} deleteLocation={this.deleteLocation} />
+            <LocationCard key={location.id} locations={location} deleteLocation={this.deleteLocation} {...this.props}/>
           )}
         </div>
       </React.Fragment>

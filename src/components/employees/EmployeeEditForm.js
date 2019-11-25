@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import EmployeeManager from "../../modules/EmployeeManager"
 import "./EmployeeForm.css"
-import AnimalManager from "../../modules/AnimalManager";
 
 class EmployeeEditForm extends Component {
 

@@ -7,9 +7,9 @@ class OwnerCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <picture>
+          {/* <picture>
             <img src={require(`${this.props.owner.image}`)} alt="Owner 1" />
-          </picture>
+          </picture> */}
           <h3><span className="card-ownername">{this.props.owner.name}</span></h3>
           <button type="button" onClick={() => { this.props.history.push(`/owners/${this.props.owner.id}/edit`)}}>Edit</button>
           <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Delete Owner</button>
