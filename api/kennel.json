@@ -1,0 +1,85 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Hank",
+      "breed": "Boykin Spaniel",
+      "employeeId": 2
+    },
+    {
+      "id": 2,
+      "name": "Lilly",
+      "breed": "Golden Retriever",
+      "image": "./Lilly_Smile.jpg",
+      "employeeId": 1
+    },
+    {
+      "id": 3,
+      "name": "Daisy",
+      "breed": "Aussiedoodle",
+      "image": "./Daisy_Wink.jpg",
+      "employeeId": 3
+    },
+    {
+      "id": 4,
+      "name": "Ellie",
+      "breed": "Chocolate Lab",
+      "employeeId": 2
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Willie",
+      "image": "./Willie_Nelson.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Waylon"
+    },
+    {
+      "id": 3,
+      "name": "Merle",
+      "image": "./Willie_Nelson.jpg"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Adam",
+      "phone": "205-948-8947",
+      "image": "./Adam_Hank.JPG"
+    },
+    {
+      "id": 2,
+      "name": "Brooks",
+      "phone": "615-555-1234",
+      "image": "./Adam_Hank.JPG"
+    },
+    {
+      "id": 3,
+      "name": "Craig and Lisa",
+      "phone": "205-401-8376"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Green Hills Location",
+      "address": "123 Hillsboro Pike",
+      "phone": "615-555-1234"
+    },
+    {
+      "id": 2,
+      "name": "Germantown Location",
+      "address": "123 Jefferson Street",
+      "phone": "615-555-5678"
+    },
+    {
+      "id": 3,
+      "name": "Melrose Location",
+      "address": "123 8th Avenue South",
+      "phone": "615-555-0000"
+    }
+  ]
+}

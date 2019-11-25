@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+// import { Link } from "react-router-dom";
+import './Employees.css'
+
 
 class EmployeeCard extends Component {
   render() {
     return (
       <div className="card">
         <div className="card-content">
-          <picture>
-            <img src={require('./Willie_Nelson.jpg')} alt="Employee 1" />
-          </picture>
-          <h3>Employee Name: <span className="card-employeename">Willie</span></h3>
-          <p>Employee since 2013</p>
+          {/* <picture>
+            <img src={require(`${this.props.employee.image}`)} alt="Employee 1" />
+          </picture> */}
+          <h3><span className="card-employeename">{this.props.employee.name}</span></h3>
+          <button type="button" onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/edit`)}}>Edit</button>
+          <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Terminate</button>
+          <button type="button"
+        onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}/details`) }}>Details</button>
         </div>
       </div>
     );
