@@ -1,13 +1,16 @@
 import React, { Component } from "react"
 import EmployeeManager from "../../modules/EmployeeManager"
 import "./EmployeeForm.css"
+import LocationManager from "../../modules/LocationManager";
 
 class EmployeeEditForm extends Component {
 
 // setting initial state
     state = {
         employeeName: "",
+        locationId: "",
         loadingStatus: true,
+        locations: []
     };
 
     handleFieldChange = evt => {
@@ -21,7 +24,8 @@ class EmployeeEditForm extends Component {
         this.setState({ loadingStatus: true });
         const editedEmployee = {
             id: this.props.match.params.employeeId,
-            name:this.state.employeeName
+            name:this.state.employeeName,
+            locationId: Number(this.state.locationId)
         };
 
         EmployeeManager.update(editedEmployee)
@@ -33,9 +37,12 @@ class EmployeeEditForm extends Component {
         .then(employee => {
             this.setState({
                 employeeName: employee.name,
+                locationId: employee.locationId,
                 loadingStatus: false
             })
-        })
+        });
+        LocationManager.getAll()
+        .then(locations => this.setState({locations:locations}))
     }
 
     render() {
@@ -53,7 +60,18 @@ class EmployeeEditForm extends Component {
                   value={this.state.employeeName}
                 />
                 <label htmlFor="employeeName">Employee name</label>
-  
+                <select
+                className="form-control"
+                id="locationId"
+                value={this.state.locationId}
+                onChange={this.handleFieldChange}
+              >
+                {this.state.locations.map(location =>
+                  <option key={location.id} value={location.id}>
+                    {location.name}
+                  </option>
+                )}
+              </select>
               </div>
               <div className="alignRight">
                 <button

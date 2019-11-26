@@ -22,5 +22,16 @@ export default {
       },
       body: JSON.stringify(editedOwner)
     }).then(data => data.json());
-  }
+  },
+
+  post(newOwner) {
+    return fetch(`${remoteURL}/owners`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newOwner)
+    }).then(data => data.json())
+  },
+
 }

@@ -7,9 +7,9 @@ class AnimalCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          {/* <picture>
+          <picture>
                     <img src={require(`${this.props.animal.image}`)} alt="My Dog" />
-                  </picture> */}
+                  </picture>
           <h2><span className="card-petname">{this.props.animal.name}</span></h2>
           <p>{this.props.animal.breed}</p>
           <button type="button"

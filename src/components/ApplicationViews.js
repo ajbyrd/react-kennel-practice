@@ -11,36 +11,37 @@ import OwnerList from './owners/OwnerList'
 import EmployeeList from './employees/EmployeeList'
 import LocationList from './locations/LocationList'
 import AnimalDetail from './animal/AnimalDetail'
-import LocationDetail from './locations/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import LocationForm from './locations/LocationForm'
+import EmployeeForm from './employees/EmployeeForm'
+import OwnerForm from './owners/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
 import EmployeeEditForm from './employees/EmployeeEditForm'
 import OwnerEditForm from './owners/OwnerEditForm'
 import LocationEditForm from './locations/LocationEditForm'
 import EmployeeWithAnimals from './employees/EmployeeWithAnimals'
-
+import LocationWithEmployees from './locations/LocationWithEmployees'
 
 class ApplicationViews extends Component {
 
-    // Check if credentials are in local storage
-    //returns true/false
-    isAuthenticated = () => localStorage.getItem("credentials") !== null
+
 
     render() {
         return (
             <React.Fragment>
-                <Route path="/login" component={Login} />
+                <Route path="/login" render={(props) => {
+                    return <Login setUser={this.props.setUser} {...props} />
+                }} />
 
                 <Route exact path="/" render={(props) => {
                     return <Home />
                 }} />
 
- {/* ANIMALS ROUTE PATHS */}
+                {/* ANIMALS ROUTE PATHS */}
                 {/* Make sure you add the `exact` attribute here */}
                 <Route exact path="/animals" render={props => {
-                    if (this.isAuthenticated()) {
+                    if (this.props.user) {
                         return <AnimalList {...props} />
                     } else {
                         return <Redirect to="/login" />
@@ -57,16 +58,19 @@ class ApplicationViews extends Component {
                         return <AnimalEditForm {...props} />
                     }}
                 />
-{/* LOCATIONS ROUTE PATHS */}
+                {/* LOCATIONS ROUTE PATHS */}
                 <Route exact path="/locations" render={props => {
-                    if (this.isAuthenticated()) {
+                    if (this.props.user) {
                         return <LocationList {...props} />
                     } else {
                         return <Redirect to="/login" />
                     }
                 }} />
-                <Route exact path="/locations/:locationId(\d+)" render={(props) => {
-                    return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props} />
+                {/* <Route exact path="/locations/:locationId(\d+)" render={(props) => {
+                    return <locationDetail locationId={parseInt(props.match.params.locationId)} {...props} />
+                }} /> */}
+                <Route path="/locations/:locationId(\d+)/details" render={(props) => {
+                    return <LocationWithEmployees {...props} />
                 }} />
                 <Route path="/locations/new" render={(props) => {
                     return <LocationForm {...props} />
@@ -76,15 +80,17 @@ class ApplicationViews extends Component {
                         return <LocationEditForm {...props} />
                     }}
                 />
-{/* EMPLOYEES ROUTE PATHS */}
+                {/* EMPLOYEES ROUTE PATHS */}
                 <Route exact path="/employees" render={props => {
-                    if (this.isAuthenticated()) {
+                    if (this.props.user) {
                         return <EmployeeList {...props} />
                     } else {
                         return <Redirect to="/login" />
                     }
                 }} />
-
+                <Route path="/employees/new" render={(props) => {
+                    return <EmployeeForm {...props} />
+                }} />
                 <Route
                     path="/employees/:employeeId(\d+)/edit" render={props => {
                         return <EmployeeEditForm {...props} />
@@ -94,13 +100,16 @@ class ApplicationViews extends Component {
                     return <EmployeeWithAnimals {...props} />
                 }} />
 
-{/* OWNERS ROUTE PATHS */}
+                {/* OWNERS ROUTE PATHS */}
                 <Route exact path="/owners" render={props => {
-                    if (this.isAuthenticated()) {
+                    if (this.props.user) {
                         return <OwnerList {...props} />
                     } else {
                         return <Redirect to="/login" />
                     }
+                }} />
+                <Route path="/owners/new" render={(props) => {
+                    return <OwnerForm {...props} />
                 }} />
                 <Route
                     path="/owners/:ownerId(\d+)/edit" render={props => {

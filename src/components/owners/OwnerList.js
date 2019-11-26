@@ -25,11 +25,20 @@ render(){
     // console.log("OwnerList: Render");
   
     return(
+      <>
+      <section className="section-content">
+      <button type="button"
+        className="btn"
+        onClick={() => { this.props.history.push("/owners/new") }}>
+        New Owner
+      </button>
+    </section>
       <div className="container-cards">
         {this.state.owners.map(owner =>
           <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner} {...this.props} />
         )}
       </div>
+      </>
     )
   }
 

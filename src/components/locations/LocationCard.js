@@ -13,7 +13,7 @@ class LocationCard extends Component {
           <h4>{this.props.locations.phone}</h4>
           <button type="button" onClick={() => { this.props.history.push(`/locations/${this.props.locations.id}/edit`)}}>Edit</button>
           <button type="button" onClick={() => this.props.deleteLocation(this.props.locations.id)}>Delete Location</button>
-          <Link to={`/locations/${this.props.locations.id}`}><button>Details</button></Link>
+          <Link to={`/locations/${this.props.locations.id}/details`}><button>Details</button></Link>
         </div>
       </div>
     );
